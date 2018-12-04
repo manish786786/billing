@@ -1,6 +1,14 @@
-<nav>
+<!-- <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/billing">Billing</a>
   <a routerLink="/records">Records</a>
   <router-outlet></router-outlet>
-</nav>
+</nav> -->
+<span style="font-size:30px;cursor:pointer;float: right;" id="main" (click)="openNav()">&#9776; Menu</span>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a routerLink="/dashboard" (click)="closeNav()">Dashboard</a>
+  <a routerLink="/billing" (click)="closeNav()">Billing</a>
+  <a routerLink="/records" (click)="closeNav()">Records</a>
+</div>
+<router-outlet></router-outlet>

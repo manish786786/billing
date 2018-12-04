@@ -6,9 +6,21 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="bill.png">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+<script>
+    var card = $(".card");
+  
+  $(document).on("mousemove",function(e) {  
+    var ax = -($(window).innerWidth()/2- e.pageX)/20;
+    var ay = ($(window).innerHeight()/2- e.pageY)/10;
+    card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
+  });
+  </script>
 </html>
