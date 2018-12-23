@@ -73,8 +73,10 @@
     </table>
   </div>
   <div><br>
-    <!-- <div class="col-md-10"> -->
-    <table class="table table-bordered table-hover cardAdjust" >
+    <!-- <div class="row"> -->
+      <button  style="margin-left: 51px;" type="button" class="btn btn-success" (click)="addRow()">add Row</button>
+      <br>
+    <table style="margin-left: 51px;" class="table table-bordered table-hover cardAdjust" >
       <thead>
 
         <td>
@@ -91,56 +93,39 @@
         </td>
 
       </thead>
-      <tbody>
-        <tr class="info">
-          <td>Shoe</td>
-          <td>4000</td>
-          <td>2</td>
-          <td>8000</td>
+      <tbody *ngIf="rawData.length >0">
+        <tr *ngFor= "let row of rawData; let i = index">
+          <td><input class="form-control" [(ngModel)]="row.description" type="text"></td>
+          <td><input class="form-control" [(ngModel)]="row.unitPrice" type="number"></td>
+          <td><input class="form-control" [(ngModel)]="row.quantity" (keyup)="calculate(i)" type="number"></td>
+          <td>{{res}}</td>
 
         </tr>
-        <tr class="active">
-            <td>Shoe</td>
-            <td>4000</td>
-            <td>2</td>
-            <td>8000</td>
-  
+        <tr>
+            <td></td>
+            <td></td>
+            <td><strong>Sub total</strong></td>
+            <td><input class="form-control" type="number"></td>
           </tr>
-          <tr class="info">
-              <td>Shoe</td>
-              <td>4000</td>
-              <td>2</td>
-              <td>8000</td>
-    
+          <tr>
+              <td></td>
+              <td></td>
+              <td><strong>Tax rate</strong></td>
+              <td><input class="form-control" type="number"></td>
             </tr>
-            <tr class="active">
-                <td>Shoe</td>
-                <td>4000</td>
-                <td>2</td>
-                <td>8000</td>
-      
+            <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Sales tax</strong></td>
+                <td><input class="form-control" type="number"></td>
               </tr>
-              <tr class="active">
-                  <td>Shoe</td>
-                  <td>4000</td>
-                  <td>2</td>
-                  <td>8000</td>
-        
+              <tr>
+                  <td></td>
+                  <td></td>
+                  <td><strong>Total</strong></td>
+                  <td><input class="form-control" type="number"></td>
                 </tr>
-                <tr class="active">
-                    <td>Shoe</td>
-                    <td>4000</td>
-                    <td>2</td>
-                    <td>8000</td>
-          
-                  </tr>
-                  <tr class="active">
-                      <td>Shoe</td>
-                      <td>4000</td>
-                      <td>2</td>
-                      <td>8000</td>
-            
-                    </tr>
+      
       </tbody>
     </table>
   <!-- </div> -->

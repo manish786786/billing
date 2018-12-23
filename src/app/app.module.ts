@@ -10,7 +10,7 @@ import { RecordsComponent } from './records/records.component';
 import { IndexComponent } from './index/index.component';
 import { RoutingComponent } from './routing/routing.component';
 import { RoutingModule } from './routing/routing.component.module';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { RoutingModule } from './routing/routing.component.module';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
